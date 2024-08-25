@@ -433,3 +433,218 @@ button:hover,
 #downloadConvertedVideo:hover {
     background-color: #218838;
 }
+
+/* สำหรับหน้าจอขนาด Mobile S (ขนาดเล็ก) */
+@media (max-width: 320px) {
+    .container {
+        width: 95%;
+        margin: 60px auto;
+    }
+
+    input {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .navbar a {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    #qrcode img, #qrcode canvas {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+/* สำหรับหน้าจอขนาด Mobile M (ขนาดกลาง) */
+@media (min-width: 321px) and (max-width: 375px) {
+    .container {
+        width: 90%;
+        margin: 70px auto;
+    }
+
+    input {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    button {
+        padding: 10px 18px;
+        font-size: 16px;
+    }
+
+    .navbar a {
+        padding: 12px 18px;
+        font-size: 16px;
+    }
+
+    #qrcode img, #qrcode canvas {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* สำหรับหน้าจอขนาด Mobile L (ขนาดใหญ่) */
+@media (min-width: 376px) and (max-width: 425px) {
+    .container {
+        width: 85%;
+        margin: 80px auto;
+    }
+
+    input {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    button {
+        padding: 12px 20px;
+        font-size: 18px;
+    }
+
+    .navbar a {
+        padding: 14px 20px;
+        font-size: 18px;
+    }
+
+    #qrcode img, #qrcode canvas {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    padding: 10px;
+}
+
+.menu-links {
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width: 425px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .menu-links {
+        display: flex;
+        flex-direction: column;
+        background-color: #333;
+        position: fixed;
+        top: 0;
+        left: -250px; /* ซ่อนเมนูนอกหน้าจอ */
+        width: 250px;
+        height: 100%;
+        overflow: hidden;
+        transition: left 0.3s ease;
+        z-index: 1000;
+    }
+
+    .menu-links a {
+        padding: 15px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+        color: white;
+        text-decoration: none;
+    }
+
+    .menu-links.show {
+        left: 0; /* แสดงเมนูเมื่อมีการแตะที่ไอคอน */
+    }
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    position: relative;
+}
+
+.menu-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#about-link {
+    margin-left: auto;
+    padding-left: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+@media (max-width: 425px) {
+    .menu-links {
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #333;
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100%;
+        transition: left 0.3s ease;
+        z-index: 1000;
+    }
+
+    .menu-links.show {
+        left: 0;
+    }
+
+    #about-link {
+        order: 1; /* ให้อยู่ล่างสุด */
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+        border-top: 1px solid #ddd;
+    }
+}
+
+#update-button {
+    background-color: rgb(53, 154, 68);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    position: fixed; /* หรือ absolute ขึ้นอยู่กับตำแหน่ง */
+    bottom: 20px; /* ปรับตำแหน่งตามต้องการ */
+    right: 20px; /* ปรับตำแหน่งตามต้องการ */
+    font-family: 'Kanit', sans-serif;
+    z-index: 1001; /* ให้ปุ่มอยู่บนสุดของหน้าเว็บ */
+}
+
+#update-button:hover {
+    background-color: rgb(59, 121, 255);
+}
+
+.facebook-icon {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #538aff;
+    color: white;
+    border-radius: 50%; /* ทำให้ปุ่มเป็นวงกลม */
+    text-decoration: none;
+    font-size: 30px; /* ขนาดของไอคอน */
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.facebook-icon:hover {
+    background-color: #86acff;
+}

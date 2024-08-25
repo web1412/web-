@@ -10,11 +10,16 @@
 <body>
     <!-- เมนูนำทางบนสุด -->
     <nav class="navbar">
-        <a href="index.html">สร้าง QR Code</a>
-        <a href="resize.html">ลดขนาดไฟล์ภาพ</a>
-        <a href="convert.html">เปลี่ยนนามสกุลรูป</a>
-        <a href="convert_video.html">แปลงนามสกุลวีดีโอ</a>
+        <span id="menu-icon" class="menu-icon" onclick="toggleMenu()">☰</span>
+        <div id="menu" class="menu-links">
+            <a href="index.html">สร้าง QR Code</a>
+            <a href="resize.html">ลดขนาดไฟล์ภาพ</a>
+            <a href="convert.html">เปลี่ยนนามสกุลรูป</a>
+            <a href="convert_video.html">แปลงนามสกุลวีดีโอ</a>
+        </div>
     </nav>
+
+    <div id="update-button" onclick="navigateToUpdatePage()">เกี่ยวกับ</div>
 
     <div class="container">
         <h1>เปลี่ยนนามสกุลรูป</h1>

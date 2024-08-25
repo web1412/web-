@@ -326,3 +326,12 @@ function uploadAndExtractAudio() {
         statusMessage.style.color = "red";
     });
 }
+
+function toggleMenu() {
+    var menu = document.getElementById("menu");
+    menu.classList.toggle("show");
+}
+
+function navigateToUpdatePage() {
+    window.location.href = "update.html"; // เปลี่ยน 'update.html' เป็นชื่อหน้าเว็บที่ต้องการจะไป
+}
