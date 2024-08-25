@@ -14,11 +14,10 @@
         <a href="resize.html">ลดขนาดไฟล์ภาพ</a>
         <a href="convert.html">เปลี่ยนนามสกุลรูป</a>
         <a href="convert_video.html">แปลงนามสกุลวีดีโอ</a>
-        <a href="convert_audio.html">แปลงนามสกุลเสียง</a>
     </nav>
 
     <div class="container">
-        <h1>สร้าง QR Code</h1>
+        <h1>สร้าง QR Code ฟรีไม่มีวันหมดอายุ</h1>
         <input type="text" id="linkInput" placeholder="วางลิงค์...">
         <div id="error-message" class="error" style="display: none;">กรุณาใส่ลิงค์</div>
         <div>
@@ -27,6 +26,10 @@
         </div>
         <div id="qrcode"></div>
         <a id="downloadLink" style="display:none;" download="qrcode.png">โหลด QR Code</a>
+        <div id="fileTypeDescription" class="description">
+            <b>วิธีการใช้</b><br>
+            วางลิงค์ที่เราจะทำ QR Code ไปที่ช่องข้างบนแล้วก็กด สร้าง QR Code แล้วก็กดโหลด
+        </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="script.js"></script>

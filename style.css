@@ -408,3 +408,28 @@ input[type="file"] {
     background-color: #0056b3;
 }
 
+button,
+#downloadLink,
+#downloadResizedImage,
+#downloadConvertedImage,
+#downloadConvertedVideo {
+    display: inline-block; /* ทำให้ปุ่มขยายตามขนาดของข้อความ */
+    padding: 10px 20px; /* ปรับความกว้างของพื้นที่ว่างภายในปุ่ม */
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    font-family: 'Kanit', sans-serif;
+    width: auto; /* ปรับขนาดปุ่มให้พอดีกับเนื้อหา */
+    white-space: nowrap; /* ป้องกันไม่ให้ข้อความในปุ่มแตกบรรทัด */
+    text-align: center; /* จัดข้อความให้อยู่กึ่งกลาง */
+}
+
+button:hover,
+#downloadLink:hover,
+#downloadResizedImage:hover,
+#downloadConvertedImage:hover,
+#downloadConvertedVideo:hover {
+    background-color: #218838;
+}
