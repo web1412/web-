@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เปลี่ยนนามสกุลรูป</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- เมนูนำทางบนสุด -->
+    <nav class="navbar">
+        <a href="index.html">สร้าง QR Code</a>
+        <a href="resize.html">ลดขนาดไฟล์ภาพ</a>
+        <a href="convert.html">เปลี่ยนนามสกุลรูป</a>
+        <a href="convert_video.html">แปลงนามสกุลวีดีโอ</a>
+        <a href="convert_audio.html">แปลงนามสกุลเสียง</a>
+    </nav>
+
+    <div class="container">
+        <h1>เปลี่ยนนามสกุลรูป</h1>
+        <div class="file-input-container">
+            <input type="file" id="imageInputConvert" onchange="updateFileName(this)">
+            <label for="imageInputConvert" id="fileLabel">เลือกไฟล์ภาพ</label>
+            <span class="file-name">ยังไม่ได้เลือกไฟล์</span>
+        </div>
+        
+    
+        <!-- ตัวเลือกนามสกุลไฟล์ -->
+        <div class="file-type-selector">
+            <label for="fileType">เลือกนามสกุลไฟล์ที่ต้องการ:</label>
+            <select id="fileType">
+                <option value="jpeg">JPG</option>
+                <option value="png">PNG</option>
+            </select>
+            <!-- คำอธิบายใต้กล่องเลือก -->
+
+        </div>
+    
+        <!-- ปุ่มสำหรับเปลี่ยนนามสกุลรูป -->
+        <button id="convertButton" onclick="convertImage()">เปลี่ยนนามสกุลรูป</button>
+    
+        <!-- สถานะ -->
+        <div id="statusMessage" style="display:none;" class="status-message"></div>
+    
+        <canvas id="convertCanvas" style="display:none;"></canvas>
+        <a id="downloadConvertedImage" style="display:none;" download="converted-image.jpg" onclick="refreshPage()">โหลดภาพที่ถูกเปลี่ยนนามสกุล</a>
+        <div id="fileTypeDescription" class="description">
+            <b>สามมารถเปลี่ยนนามสกุลรูปอะไรได้บ้าง</b><br>
+            .jpeg .jpg .png .gif .bmp .tiff .tif .webp .svg .heif .heic .psd .ai .raw .cr2 .nef .orf .sr2 .arw .dng .eps .pdf
+        </div>
+        <div id="fileTypeDescription" class="description">
+            <b>ความรู้นามสกุล .png และ .jpg ต่างกันดังนี้</b><br>
+            <b>png</b> รองรับความโปร่งใส ไม่สูญเสียคุณภาพ แต่ไฟล์ใหญ่กว่า เหมาะกับกราฟิก<br>
+            <b>jpg</b> บีบอัดสูญเสียคุณภาพ ไม่มีความโปร่งใส แต่ไฟล์เล็ก เหมาะกับภาพถ่าย
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

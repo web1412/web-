@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แปลงนามสกุลวีดีโอ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- เมนูนำทางบนสุด -->
+    <nav class="navbar">
+        <a href="index.html">สร้าง QR Code</a>
+        <a href="resize.html">ลดขนาดไฟล์ภาพ</a>
+        <a href="convert.html">เปลี่ยนนามสกุลรูป</a>
+        <a href="convert_video.html">แปลงนามสกุลวีดีโอ</a>
+        <a href="convert_audio.html">แปลงนามสกุลเสียง</a>
+    </nav>
+
+    <div class="container">
+        <h1>แปลงนามสกุลวีดีโอ</h1>
+        <div class="file-input-container">
+            <input type="file" id="imageInputConvert" onchange="updateFileName(this)">
+            <label for="imageInputConvert" id="fileLabel">เลือกไฟล์วีดีโอ</label>
+            <span class="file-name">ยังไม่ได้เลือกไฟล์</span>
+        </div>        
+        
+        <!-- ตัวเลือกนามสกุลไฟล์วีดีโอ -->
+        <div class="file-type-selector">
+            <label for="videoType">เลือกนามสกุลไฟล์ที่ต้องการ:</label>
+            <select id="videoType">
+                <option value="mp4">MP4</option>
+                <option value="avi">AVI</option>
+                <option value="mkv">MKV</option>
+            </select>
+        </div>
+        
+        <!-- ปุ่มสำหรับแปลงนามสกุลวีดีโอ -->
+        <button id="convertVideoButton" onclick="convertVideo()">แปลงนามสกุลวีดีโอ</button>
+    
+        <!-- สถานะ -->
+        <div id="statusMessage" style="display:none;" class="status-message"></div>
+    
+        <video id="convertCanvas" style="display:none;"></video>
+        <a id="downloadConvertedVideo" style="display:none;" download="converted-video.mp4" onclick="refreshPage()">โหลดวีดีโอที่ถูกเปลี่ยนนามสกุล</a>
+        <div id="fileTypeDescription" class="description">
+            <b>mp4</b> ไฟล์เล็ก คุณภาพดี รองรับอุปกรณ์ส่วนใหญ่  <br>
+            <b>avi</b> ไฟล์ใหญ่ คุณภาพสูงกว่า แต่เก่าและไม่สะดวกเท่า  <br>
+            <b>mkv</b> รองรับคุณภาพสูง หลายแทร็กเสียงและซับไตเติล แต่บางอุปกรณ์ไม่รองรับ
+        </div>
+    </div>
+    
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ลดขนาดไฟล์ภาพ</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- เมนูนำทางบนสุด -->
+    <nav class="navbar">
+        <a href="index.html">สร้าง QR Code</a>
+        <a href="resize.html">ลดขนาดไฟล์ภาพ</a>
+        <a href="convert.html">เปลี่ยนนามสกุลรูป</a>
+        <a href="convert_video.html">แปลงนามสกุลวีดีโอ</a>
+        <a href="convert_audio.html">แปลงนามสกุลเสียง</a>
+    </nav>
+
+    <div class="container">
+        <h1>ลดขนาดไฟล์ภาพ</h1>
+        <div class="file-input-container">
+            <input type="file" id="imageInput" onchange="updateFileName(this)">
+            <label for="imageInput" id="fileLabel">เลือกไฟล์ภาพ</label>
+            <span class="file-name">ยังไม่ได้เลือกไฟล์</span>
+        </div>
+    
+        <div class="file-size-selector">
+            <label for="fileSize">เลือกขนาดไฟล์ที่ต้องการ (MB):</label>
+            <select id="fileSize">
+                <option value="1">1 MB</option>
+                <option value="2">2 MB</option>
+                <option value="3">3 MB</option>
+                <option value="5">5 MB</option>
+            </select>
+        </div>
+    
+        <button id="resizeButton" onclick="resizeImage()">ลดขนาดภาพ</button>
+    
+        <div id="statusMessage" style="display:none;" class="status-message"></div>
+    
+        <canvas id="resizeCanvas" style="display:none;"></canvas>
+        <a id="downloadResizedImage" style="display:none;" download="resized-image.png" onclick="refreshPage()">โหลดภาพที่ถูกลดขนาด</a>
+    </div>
+    
+    
+    <script src="script.js"></script>
+</body>
+</html>

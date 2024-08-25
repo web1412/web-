@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- เมนูนำทางบนสุด -->
+    <nav class="navbar">
+        <a href="index.html">สร้าง QR Code</a>
+        <a href="resize.html">ลดขนาดไฟล์ภาพ</a>
+        <a href="convert.html">เปลี่ยนนามสกุลรูป</a>
+        <a href="convert_video.html">แปลงนามสกุลวีดีโอ</a>
+        <a href="convert_audio.html">แปลงนามสกุลเสียง</a>
+    </nav>
+
+    <div class="container">
+        <h1>สร้าง QR Code</h1>
+        <input type="text" id="linkInput" placeholder="วางลิงค์...">
+        <div id="error-message" class="error" style="display: none;">กรุณาใส่ลิงค์</div>
+        <div>
+            <button onclick="generateQRCode()">สร้าง QR Code</button>
+            <button onclick="clearInput()">เคลียลิงค์</button>
+        </div>
+        <div id="qrcode"></div>
+        <a id="downloadLink" style="display:none;" download="qrcode.png">โหลด QR Code</a>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
